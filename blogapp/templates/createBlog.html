@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!--
+        as_p: <p> 태그로 감싼 형태로 출력
+        as_table: <table> 태그로 감싼 형태로 출력
+        as_ul: <ul> 태그로 감싼 형태로 출력
+    -->
+    <br>
+    <div class="container">
+        <h5>글쓰기</h5>
+        <hr>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.media }}
+            {{ form.as_p }}
+            <input type="submit" class="btn btn-dark" value="저장">
+        </form>
+    </div>
+{% endblock %}
